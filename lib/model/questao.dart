@@ -12,4 +12,15 @@ class Questao {
     required this.gabarito,
     required this.alternativas,
   });
+
+  factory Questao.fromMap(Map<String, dynamic> map) {
+    return Questao(
+      id: map['id'] ?? 0,
+      pergunta: map['pergunta'] ?? '',
+      gabarito: map['gabarito'] ?? 0,
+      alternativas: map['alternativas']
+              .map<Alternativa>((map) => Alternativa.fromMap(map)) ??
+          <Alternativa>[],
+    );
+  }
 }
