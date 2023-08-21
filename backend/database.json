@@ -1,0 +1,120 @@
+{
+    "questionarios": [
+        {
+            "id": 1,
+            "titulo": "Geografia",
+            "questoes": [
+                {
+                    "id": 1,
+                    "pergunta": "Qual o nome da maior floresta brasileira?",
+                    "gabarito": 4,
+                    "alternativas": [
+                        {
+                            "id": 1,
+                            "titulo": "Caatinga"
+                        },
+                        {
+                            "id": 2,
+                            "titulo": "Cerrado"
+                        },
+                        {
+                            "id": 3,
+                            "titulo": "Mata Atlântica"
+                        },
+                        {
+                            "id": 4,
+                            "titulo": "Amazônica"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "titulo": "Astrologia",
+            "questoes": [
+                {
+                    "id": 1,
+                    "pergunta": "Qual signo do zodíaco é associado à personalidade de pessoas nascidas entre 23 de setembro e 22 de outubro?",
+                    "gabarito": 3,
+                    "alternativas": [
+                        {
+                            "id": 1,
+                            "titulo": "Áries"
+                        },
+                        {
+                            "id": 2,
+                            "titulo": "Gêmeos"
+                        },
+                        {
+                            "id": 3,
+                            "titulo": "Libra"
+                        },
+                        {
+                            "id": 4,
+                            "titulo": "Escorpião"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "titulo": "Mitologia",
+            "questoes": [
+                {
+                    "id": 1,
+                    "pergunta": "Na mitologia romana, quem é o deus equivalente a Zeus na mitologia grega, sendo o soberano dos deuses e o deus do céu e do trovão?",
+                    "gabarito": 2,
+                    "alternativas": [
+                        {
+                            "id": 1,
+                            "titulo": "Apolo"
+                        },
+                        {
+                            "id": 2,
+                            "titulo": "Júpiter"
+                        },
+                        {
+                            "id": 3,
+                            "titulo": "Hades"
+                        },
+                        {
+                            "id": 4,
+                            "titulo": "Netuno"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "titulo": "História",
+            "questoes": [
+                {
+                    "id": 1,
+                    "pergunta": "Qual evento marcou o início da Primeira Guerra Mundial em 1914?",
+                    "gabarito": 2,
+                    "alternativas": [
+                        {
+                            "id": 1,
+                            "titulo": "Queda do Império Otomano"
+                        },
+                        {
+                            "id": 2,
+                            "titulo": "Assassinato do Arquiduque Franz Ferdinand"
+                        },
+                        {
+                            "id": 3,
+                            "titulo": "Revolução Russa"
+                        },
+                        {
+                            "id": 4,
+                            "titulo": "Tratado de Versalhes"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
