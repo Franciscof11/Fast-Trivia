@@ -6,7 +6,7 @@ enum QuizStatus { inicial, correto, incorreto, finalizado }
 
 class QuizState extends Equatable {
   final QuizStatus status;
-  final String respostaSelecionada;
+  final int respostaSelecionada;
   final List<Questao> correta;
   final List<Questao> incorreta;
 
@@ -23,7 +23,7 @@ class QuizState extends Equatable {
   factory QuizState.initial() {
     return const QuizState(
       status: QuizStatus.inicial,
-      respostaSelecionada: '',
+      respostaSelecionada: 0,
       correta: [],
       incorreta: [],
     );
@@ -31,7 +31,7 @@ class QuizState extends Equatable {
 
   QuizState copyWith({
     QuizStatus? status,
-    String? respostaSelecionada,
+    int? respostaSelecionada,
     List<Questao>? correta,
     List<Questao>? incorreta,
   }) {
