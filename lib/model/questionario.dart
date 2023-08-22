@@ -15,8 +15,10 @@ class Questionario {
     return Questionario(
       id: map['id'] ?? 0,
       titulo: map['titulo'] ?? '',
-      questoes:
-          map['questoes'].map((map) => Questao.fromMap(map)) ?? <Questao>[],
+      questoes: map['questoes']
+              .map<Questao>((map) => Questao.fromMap(map))
+              .toList() ??
+          <Questao>[],
     );
   }
 }

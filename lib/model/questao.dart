@@ -19,7 +19,8 @@ class Questao {
       pergunta: map['pergunta'] ?? '',
       gabarito: map['gabarito'] ?? 0,
       alternativas: map['alternativas']
-              .map<Alternativa>((map) => Alternativa.fromMap(map)) ??
+              .map<Alternativa>((map) => Alternativa.fromMap(map))
+              .toList() ??
           <Alternativa>[],
     );
   }

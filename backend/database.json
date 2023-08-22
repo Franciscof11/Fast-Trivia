@@ -3,6 +3,7 @@
         {
             "id": 1,
             "titulo": "Geografia",
+            "urlImageBanner": "https://www.sumarequalifica.com.br/348/metodologias-de-ensino-em-geografia-e-historia-no-fundamental-i.jpg",
             "questoes": [
                 {
                     "id": 1,
@@ -32,6 +33,7 @@
         {
             "id": 2,
             "titulo": "Astrologia",
+            "urlImageBanner": "https://f.i.uol.com.br/fotografia/2018/11/06/15415538055be23e8d79497_1541553805_3x2_md.jpg",
             "questoes": [
                 {
                     "id": 1,
@@ -61,6 +63,7 @@
         {
             "id": 3,
             "titulo": "Mitologia",
+            "urlImageBanner": "https://s1.static.brasilescola.uol.com.br/be/conteudo/images/zeus-5c33adcc00fe9.jpg",
             "questoes": [
                 {
                     "id": 1,
@@ -90,6 +93,7 @@
         {
             "id": 4,
             "titulo": "História",
+            "urlImageBanner": "https://www.souzaaranhamachado.com.br/wp-content/uploads/2022/03/Hist%C3%B3ria.jpg",
             "questoes": [
                 {
                     "id": 1,
