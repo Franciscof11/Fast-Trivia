@@ -2,36 +2,6 @@
     "questionarios": [
         {
             "id": 1,
-            "titulo": "Astrologia",
-            "urlImageBanner": "https://f.i.uol.com.br/fotografia/2018/11/06/15415538055be23e8d79497_1541553805_3x2_md.jpg",
-            "questoes": [
-                {
-                    "id": 1,
-                    "pergunta": "Qual signo do zodíaco é associado à personalidade de pessoas nascidas entre 23 de setembro e 22 de outubro?",
-                    "gabarito": 3,
-                    "alternativas": [
-                        {
-                            "id": 1,
-                            "titulo": "Áries"
-                        },
-                        {
-                            "id": 2,
-                            "titulo": "Gêmeos"
-                        },
-                        {
-                            "id": 3,
-                            "titulo": "Libra"
-                        },
-                        {
-                            "id": 4,
-                            "titulo": "Escorpião"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "id": 2,
             "titulo": "Mitologia",
             "urlImageBanner": "https://s1.static.brasilescola.uol.com.br/be/conteudo/images/zeus-5c33adcc00fe9.jpg",
             "questoes": [
@@ -55,6 +25,36 @@
                         {
                             "id": 4,
                             "titulo": "Netuno"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "titulo": "Astrologia",
+            "urlImageBanner": "https://f.i.uol.com.br/fotografia/2018/11/06/15415538055be23e8d79497_1541553805_3x2_md.jpg",
+            "questoes": [
+                {
+                    "id": 1,
+                    "pergunta": "Qual signo do zodíaco é associado à personalidade de pessoas nascidas entre 23 de setembro e 22 de outubro?",
+                    "gabarito": 3,
+                    "alternativas": [
+                        {
+                            "id": 1,
+                            "titulo": "Áries"
+                        },
+                        {
+                            "id": 2,
+                            "titulo": "Gêmeos"
+                        },
+                        {
+                            "id": 3,
+                            "titulo": "Libra"
+                        },
+                        {
+                            "id": 4,
+                            "titulo": "Escorpião"
                         }
                     ]
                 }

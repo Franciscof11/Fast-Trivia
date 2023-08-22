@@ -16,7 +16,7 @@ class CustomListTile extends StatelessWidget {
       height: 350,
       decoration: BoxDecoration(
         color: Colors.amber,
-        borderRadius: BorderRadius.circular(12),
+        borderRadius: BorderRadius.circular(20),
       ),
       child: SizedBox(
         width: MediaQuery.of(context).size.width,

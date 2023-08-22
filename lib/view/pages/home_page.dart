@@ -51,9 +51,7 @@ class HomePage extends ConsumerWidget {
                 ],
               ),
               //
-              //
               const SizedBox(height: 40),
-              //
               //
               SizedBox(
                 height: MediaQuery.of(context).size.height * 0.7,
@@ -76,7 +74,8 @@ class HomePage extends ConsumerWidget {
                           );
                         },
                         separatorBuilder: (context, index) => const Padding(
-                          padding: EdgeInsets.symmetric(vertical: 15),
+                          padding: EdgeInsets.symmetric(
+                              vertical: 20, horizontal: 10),
                           child: Divider(color: Colors.white, thickness: 1),
                         ),
                         itemCount: data.length,
