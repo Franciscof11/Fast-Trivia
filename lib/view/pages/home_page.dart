@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../../controller/providers/questionarios_provider.dart';
+import '../widgets/custom_list_tile.dart';
 
 class HomePage extends ConsumerWidget {
   const HomePage({super.key});
@@ -51,23 +52,35 @@ class HomePage extends ConsumerWidget {
               ),
               //
               //
-              const SizedBox(height: 80),
+              const SizedBox(height: 40),
               //
               //
               SizedBox(
-                height: 200,
+                height: MediaQuery.of(context).size.height * 0.7,
                 width: MediaQuery.of(context).size.width,
                 child: questionarios.when(
                   data: (data) {
-                    return ListView.separated(
-                      itemBuilder: (context, index) {
-                        return ListTile(
-                          title: Text(data[index].urlImageBanner),
-                        );
+                    return RefreshIndicator(
+                      color: Colors.black,
+                      onRefresh: () async {
+                        // ignore: unused_result
+                        ref.refresh(questionariosProvider.future);
+                        return Future<void>.delayed(const Duration(seconds: 1));
                       },
-                      separatorBuilder: (context, index) =>
-                          const Divider(color: Colors.white, thickness: 2),
-                      itemCount: data.length,
+                      child: ListView.separated(
+                        physics: const BouncingScrollPhysics(),
+                        itemBuilder: (context, index) {
+                          return CustomListTile(
+                            titulo: data[index].titulo,
+                            urlImageBanner: data[index].urlImageBanner,
+                          );
+                        },
+                        separatorBuilder: (context, index) => const Padding(
+                          padding: EdgeInsets.symmetric(vertical: 15),
+                          child: Divider(color: Colors.white, thickness: 1),
+                        ),
+                        itemCount: data.length,
+                      ),
                     );
                   },
                   error: (error, _) => Center(
