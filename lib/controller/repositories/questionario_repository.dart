@@ -6,8 +6,15 @@ class QuestionarioRepository {
     final response =
         await Dio().get('http://192.168.100.11:8080/questionarios');
 
-    return response.data
-        .map<Questionario>((map) => Questionario.fromMap(map))
-        .toList();
+    try {
+      if (response.statusCode == 200) {
+        return response.data
+            .map<Questionario>((map) => Questionario.fromMap(map))
+            .toList();
+      }
+    } catch (error) {
+      throw Exception(error);
+    }
+    return <Questionario>[];
   }
 }

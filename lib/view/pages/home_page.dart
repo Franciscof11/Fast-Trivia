@@ -65,7 +65,8 @@ class HomePage extends ConsumerWidget {
                           // ignore: unused_result
                           ref.refresh(questionariosProvider.future);
                           return Future<void>.delayed(
-                              const Duration(seconds: 1));
+                            const Duration(seconds: 1),
+                          );
                         },
                         child: ListView.separated(
                           physics: const BouncingScrollPhysics(),
@@ -87,7 +88,12 @@ class HomePage extends ConsumerWidget {
                     error: (error, _) => Center(
                       child: Text('$error'),
                     ),
-                    loading: () => const CircularProgressIndicator(),
+                    loading: () => Center(
+                      child: CircularProgressIndicator(
+                        backgroundColor: Colors.white,
+                        color: Colors.yellow[700],
+                      ),
+                    ),
                   ),
                 ),
               ],
