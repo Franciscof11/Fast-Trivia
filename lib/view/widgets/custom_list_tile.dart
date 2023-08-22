@@ -5,9 +5,12 @@ import 'package:google_fonts/google_fonts.dart';
 class CustomListTile extends StatelessWidget {
   final String titulo;
   final String urlImageBanner;
-
+  final int idQuestionario;
   const CustomListTile(
-      {super.key, required this.titulo, required this.urlImageBanner});
+      {super.key,
+      required this.titulo,
+      required this.urlImageBanner,
+      required this.idQuestionario});
 
   @override
   Widget build(BuildContext context) {
@@ -40,9 +43,9 @@ class CustomListTile extends StatelessWidget {
                 ),
               ),
             ),
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 10),
-              child: SliderButton(),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 10),
+              child: SliderButton(idQuestionario: idQuestionario),
             ),
           ],
         ),

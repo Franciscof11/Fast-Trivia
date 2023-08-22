@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_swipe_button/flutter_swipe_button.dart';
+import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class SliderButton extends StatefulWidget {
-  const SliderButton({super.key});
+  final int idQuestionario;
+  const SliderButton({super.key, required this.idQuestionario});
 
   @override
   State<SliderButton> createState() => _SliderButtonState();
@@ -20,12 +22,7 @@ class _SliderButtonState extends State<SliderButton> {
       activeThumbColor: Colors.white,
       activeTrackColor: Colors.grey.shade300,
       onSwipe: () {
-        ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(
-            content: Text("Swipped"),
-            backgroundColor: Colors.green,
-          ),
-        );
+        context.push('/QuizPage', extra: widget.idQuestionario);
       },
       child: Text(
         "Deslize para jogar",

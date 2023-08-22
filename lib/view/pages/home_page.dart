@@ -74,6 +74,7 @@ class HomePage extends ConsumerWidget {
                             return CustomListTile(
                               titulo: data[index].titulo,
                               urlImageBanner: data[index].urlImageBanner,
+                              idQuestionario: index,
                             );
                           },
                           separatorBuilder: (context, index) => const Padding(
