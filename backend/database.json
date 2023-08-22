@@ -27,6 +27,29 @@
                             "titulo": "Netuno"
                         }
                     ]
+                },
+                {
+                    "id": 2,
+                    "pergunta": "Qual deus na mitologia grega é conhecido como o Deus do Mar?",
+                    "gabarito": 3,
+                    "alternativas": [
+                        {
+                            "id": 1,
+                            "titulo": "Ares"
+                        },
+                        {
+                            "id": 2,
+                            "titulo": "Apolo"
+                        },
+                        {
+                            "id": 3,
+                            "titulo": "Poseidon"
+                        },
+                        {
+                            "id": 4,
+                            "titulo": "Hermes"
+                        }
+                    ]
                 }
             ]
         },
