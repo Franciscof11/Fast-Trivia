@@ -62,7 +62,7 @@ class HomePage extends ConsumerWidget {
                     return ListView.separated(
                       itemBuilder: (context, index) {
                         return ListTile(
-                          title: Text(data[index].titulo),
+                          title: Text(data[index].urlImageBanner),
                         );
                       },
                       separatorBuilder: (context, index) =>
