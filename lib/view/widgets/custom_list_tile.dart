@@ -14,23 +14,24 @@ class CustomListTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final widthSize = MediaQuery.of(context).size.width;
+    final heightSize = MediaQuery.of(context).size.height;
     return Container(
       width: MediaQuery.of(context).size.width,
-      height: 350,
+      height: heightSize > 850 ? 365 : 355,
       decoration: BoxDecoration(
         color: Colors.amber,
         borderRadius: BorderRadius.circular(20),
       ),
       child: SizedBox(
-        width: MediaQuery.of(context).size.width,
-        height: MediaQuery.of(context).size.height,
+        width: widthSize,
+        height: heightSize,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Image.network(
               urlImageBanner,
               width: MediaQuery.of(context).size.width,
-              height: 230,
             ),
             Padding(
               padding: const EdgeInsets.only(left: 12, top: 12, bottom: 10),
@@ -44,7 +45,9 @@ class CustomListTile extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 10),
+              padding: const EdgeInsets.symmetric(
+                horizontal: 10,
+              ),
               child: SliderButton(idQuestionario: idQuestionario),
             ),
           ],

@@ -14,7 +14,7 @@ class QuizPage extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final questoes = ref.watch(questoesProvider);
+    final questoes = ref.watch(questoesProvider(idQuestionario));
 
     return questoes.when(
       data: (data) => Container(

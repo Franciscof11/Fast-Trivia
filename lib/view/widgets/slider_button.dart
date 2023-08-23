@@ -22,6 +22,7 @@ class _SliderButtonState extends State<SliderButton> {
       activeThumbColor: Colors.white,
       activeTrackColor: Colors.grey.shade300,
       onSwipe: () {
+        print(widget.idQuestionario);
         context.push('/QuizPage', extra: widget.idQuestionario);
       },
       child: Text(
