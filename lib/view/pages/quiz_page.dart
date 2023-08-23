@@ -2,6 +2,7 @@ import 'package:fast_trivia/view/widgets/custom_buttom.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import '../../controller/providers/questionarios_provider.dart';
 
@@ -20,59 +21,86 @@ class QuizPage extends ConsumerWidget {
       data: (data) => Container(
         height: MediaQuery.of(context).size.height,
         width: MediaQuery.of(context).size.width,
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            colors: [
-              Colors.yellow[600]!,
-              Colors.black,
-            ],
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-          ),
-        ),
+        color: Colors.yellow[700],
         child: Scaffold(
           backgroundColor: Colors.transparent,
-          body: Padding(
-            padding: const EdgeInsets.all(20),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(data.first.pergunta),
-                SizedBox(
-                  height: 20,
+          body: Stack(
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(top: 150),
+                child: Container(
+                  height: MediaQuery.of(context).size.height,
+                  width: MediaQuery.of(context).size.width,
+                  decoration: const BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadiusDirectional.only(
+                        topStart: Radius.circular(45),
+                        topEnd: Radius.circular(45),
+                      )),
                 ),
-                CustomButtom(
-                    title: data.first.alternativas.first.titulo,
-                    onTap: () {
-                      context.pop();
-                    }),
-                SizedBox(
-                  height: 20,
+              ),
+              Padding(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 25, vertical: 90),
+                child: Row(
+                  children: [
+                    GestureDetector(
+                      onTap: () => context.pop(),
+                      child: const Icon(
+                        Icons.arrow_back_ios,
+                        size: 32,
+                      ),
+                    ),
+                    const SizedBox(width: 108),
+                    Text(
+                      '1 / 5',
+                      style: GoogleFonts.nunito(
+                        color: Colors.black,
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ],
                 ),
-                CustomButtom(
-                    title: data.first.alternativas[1].titulo,
-                    onTap: () {
-                      context.pop();
-                    }),
-                SizedBox(
-                  height: 20,
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 24, right: 24, top: 200),
+                child: Column(
+                  children: [
+                    Text(
+                      data.first.pergunta,
+                      style: GoogleFonts.nunito(
+                        color: Colors.black,
+                        fontSize: 18,
+                        fontWeight: FontWeight.normal,
+                        wordSpacing: 6,
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 60,
+                    ),
+                    CustomButtom(
+                        title: data.first.alternativas.first.titulo,
+                        onTap: () {}),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    CustomButtom(
+                        title: data.first.alternativas[1].titulo, onTap: () {}),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    CustomButtom(
+                        title: data.first.alternativas[2].titulo, onTap: () {}),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    CustomButtom(
+                        title: data.first.alternativas[3].titulo, onTap: () {}),
+                  ],
                 ),
-                CustomButtom(
-                    title: data.first.alternativas[2].titulo,
-                    onTap: () {
-                      context.pop();
-                    }),
-                SizedBox(
-                  height: 20,
-                ),
-                CustomButtom(
-                    title: data.first.alternativas[3].titulo,
-                    onTap: () {
-                      context.pop();
-                    }),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
       ),

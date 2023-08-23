@@ -11,18 +11,18 @@ class CustomButtom extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        height: 50,
+        height: 65,
         width: double.infinity,
-        decoration: const BoxDecoration(
-          color: Colors.purple,
-          borderRadius: BorderRadius.all(Radius.circular(15)),
+        decoration: BoxDecoration(
+          color: Colors.yellow[200],
+          borderRadius: const BorderRadius.all(Radius.circular(15)),
         ),
         child: Center(
           child: Text(
             title,
             style: GoogleFonts.nunito(
               color: Colors.black,
-              fontSize: 15,
+              fontSize: 20,
               fontWeight: FontWeight.bold,
             ),
           ),

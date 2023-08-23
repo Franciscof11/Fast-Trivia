@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../../controller/providers/questionarios_provider.dart';
@@ -11,8 +12,18 @@ class HomePage extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final questionarios = ref.watch(questionariosProvider);
-
+    GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
     return Scaffold(
+      drawer: Container(
+        width: MediaQuery.of(context).size.width * 0.5,
+        color: Colors.yellow[700],
+        child: const Column(
+          children: [
+            Text('Hello'),
+          ],
+        ),
+      ),
+      key: scaffoldKey,
       backgroundColor: const Color.fromRGBO(23, 23, 23, 1),
       body: SafeArea(
         child: Padding(
@@ -44,10 +55,13 @@ class HomePage extends ConsumerWidget {
                         ),
                       ],
                     ),
-                    Icon(
-                      Icons.menu,
-                      color: Colors.yellow[700],
-                      size: 32,
+                    GestureDetector(
+                      onTap: () => scaffoldKey.currentState?.openDrawer(),
+                      child: Icon(
+                        Icons.menu,
+                        color: Colors.yellow[700],
+                        size: 32,
+                      ),
                     )
                   ],
                 ),
@@ -71,11 +85,26 @@ class HomePage extends ConsumerWidget {
                         child: ListView.separated(
                           physics: const BouncingScrollPhysics(),
                           itemBuilder: (context, index) {
-                            return CustomListTile(
-                              titulo: data[index].titulo,
-                              urlImageBanner: data[index].urlImageBanner,
-                              idQuestionario: index,
-                            );
+                            return AnimationConfiguration.staggeredList(
+                                position: index,
+                                child: SlideAnimation(
+                                    duration:
+                                        const Duration(milliseconds: 2500),
+                                    curve: Curves.fastLinearToSlowEaseIn,
+                                    horizontalOffset: 30,
+                                    verticalOffset: 300.0,
+                                    child: FlipAnimation(
+                                      duration:
+                                          const Duration(milliseconds: 3000),
+                                      curve: Curves.fastLinearToSlowEaseIn,
+                                      flipAxis: FlipAxis.y,
+                                      child: CustomListTile(
+                                        titulo: data[index].titulo,
+                                        urlImageBanner:
+                                            data[index].urlImageBanner,
+                                        idQuestionario: index,
+                                      ),
+                                    )));
                           },
                           separatorBuilder: (context, index) => const Padding(
                             padding: EdgeInsets.symmetric(
